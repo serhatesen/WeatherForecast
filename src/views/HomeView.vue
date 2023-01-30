@@ -121,8 +121,7 @@ export default {
     locationUrl: "http://api.openweathermap.org/geo/1.0/direct?",
     weatherUrl: "https://api.openweathermap.org/data/2.5/weather?",
     city: "",
-    apiKey: "e773efcb4cd9e3992e7d4639a8ca6b79",
-    apiKeyweather: "a84ff3757be7e92f78d9217774c33ee8",
+    apiKey: "YOUR_API_KEY",
     locationStatus: {},
     weatherStatus: {},
     weatherMain: {},
@@ -147,7 +146,7 @@ export default {
       })
     },
     weathers() {
-      let weather = `${this.weatherUrl}lat=${this.locationStatus.lat}&lon=${this.locationStatus.lon}&appid=${this.apiKeyweather}`
+      let weather = `${this.weatherUrl}lat=${this.locationStatus.lat}&lon=${this.locationStatus.lon}&appid=${this.apiKey}`
       axios.get(weather)
           .then((response) => {
             this.weatherStatus = response.data.weather[0]
